@@ -1,0 +1,268 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ddd;
+}
+
+.flex-middle {
+    display: flex;
+    align-items: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.pt10 {
+    padding: 10px 0px;
+}
+
+#cover-preview {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+@media only screen and (max-width: 600px) {
+    #cover-preview {
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #cover-preview {
+        width: 100%;
+    }
+}
+
+#menu {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    background-color: #ffffff40;
+    margin: 0px 10px;
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+}
+
+#openFilesbtn {
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+#openFilesbtn:hover {
+    color: white;
+}
+
+#musicSelector {
+    display: none;
+    color: transparent;
+}
+
+.vz-source {
+    position: absolute;
+    display: inline-block;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    color: #fff;
+    text-decoration: none;
+}
+
+.vz-source:hover {
+    color: #444;
+}
+
+.vz-wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #00ffff59;
+    ;
+    overflow: hidden;
+}
+
+.vz-wrapper.-canvas {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: initial;
+    width: initial;
+    background: transparent;
+    box-shadow: none;
+}
+
+.vz-wrapper {
+    box-shadow: inset 0 0 200px 60px #000;
+}
+
+.unselectable {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+#playerControlersContainer {
+    background-color: #ffffff40;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#playerControls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#playerControls [data-control] {
+    cursor: pointer;
+    padding: 4px;
+    transition: all 0.25s;
+}
+
+#playerControls [data-control]:hover {
+    color: white;
+}
+
+#audioPlayer {
+    display: none;
+}
+
+#coverImageContainer {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#playListContainer {
+    position: fixed;
+    width: calc(100vw - 20px);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#filesContainer {
+    height: 20vh;
+    width: calc(100vw - 20px);
+    overflow: auto;
+    background-color: #ffffff40;
+}
+
+#playList {
+    border-collapse: collapse;
+    margin: 0px 10px;
+}
+
+#playList tr {
+    border-bottom: 1px solid #3a3a3a34;
+}
+
+#playList td {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#playList [data-file].active {
+    background-color: #00ffff59;
+    font-weight: bold;
+}
+
+#playList tr:hover {
+    background-color: #dddddd4a;
+}
+
+#playList td.rowNumber {
+    width: 1%;
+    text-align: center;
+}
+
+#playList td.fileName {
+    text-align: left;
+}
+
+#playList td.fileSize {
+    text-align: right;
+}
+
+/* sliders */
+
+.audioProgress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+#audioProgressContainer {
+    width: calc(100% - 120px);
+}
+
+#volumeProgressContainer {
+    width: 150px;
+}
+
+@media only screen and (max-width: 500px) {
+    #volumeProgressContainer {
+        width: 80px;
+    }
+}
+
+.progressContainer {
+    position: relative;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 3px;
+    margin: 0px 4px;
+    cursor: pointer;
+}
+
+#audioProgress, #playerVolume {
+    transition: all 0.1s;
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+}
+
+#playerVolume {
+    width: 20%;
+}
+
+#playerVolumeSilder {
+    display: none;
+}
+
+.vloumeController {
+    position: absolute;
+    right: 10px;
+}
